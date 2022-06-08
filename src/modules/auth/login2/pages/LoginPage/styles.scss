@@ -1,0 +1,12 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & > img {
+        max-width: 250px;
+        margin: 32px
+    }
+}

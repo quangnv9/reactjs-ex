@@ -1,0 +1,31 @@
+.login-form {
+    max-width: 560px;
+    width: 100%;
+
+    & > .alert-danger {
+        width: 100%;
+    }
+
+    & > .input-field {
+        margin-bottom: 15px;
+    }
+
+    & > .input-field.link {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & > .input-field > .input-text {
+        width: 100%;
+    }
+    & > .input-field > div > .form-check-label {
+        margin-left: 6px;
+    }
+    & > button {
+        width: 200px;
+        margin: 0 auto;
+    }
+}   
+.alert-danger {
+    width: 100%;
+}
