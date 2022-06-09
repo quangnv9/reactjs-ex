@@ -1,0 +1,13 @@
+.form-group {
+
+    &> input {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+    }
+    &> input:focus {
+        border: 1px solid #0d6efd;
+        outline: #0d6efd;
+    }
+
+}
