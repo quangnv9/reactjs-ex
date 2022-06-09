@@ -1,6 +1,6 @@
 {
   "welcome": "Xin chào",
-  "email": "Địa chỉ Email",
+  "email": "Địa chỉ email",
   "password": "Mật khẩu",
   "rememberMe": "Lưu thông tin đăng nhập",
   "emailRequire": "Vui lòng nhập địa chỉ email",
@@ -9,5 +9,6 @@
   "minPasswordInvalid": "Mật khẩu tối thiểu 4 ký tự",
   "maxPasswordInvalid": "Mật khẩu tối đa 50 ký tự",
   "login": "Đăng nhập",
+  "name":"Họ tên",
   "register": "Đăng ký"
 }

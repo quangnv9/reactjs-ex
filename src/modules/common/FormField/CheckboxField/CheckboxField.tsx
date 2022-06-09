@@ -4,18 +4,17 @@ import { FormattedMessage } from 'react-intl';
 
 interface Props {
   id: string;
+  label: string;
   name: string;
-  errors: string | undefined;
-  isTouched: boolean | undefined;
 }
 
 const CheckboxField = (props: Props) => {
-  const { id, errors, name, isTouched } = props;
+  const { id, label, name } = props;
   return (
     <div className="checkbox-field">
-      <Field id={name} type="checkbox" name={name} isTouched={isTouched} />
+      <Field id={name} type="checkbox" name={name} />
       <label htmlFor={name}>
-        <FormattedMessage id="rememberMe" />
+        <FormattedMessage id={label} />
       </label>
     </div>
   );
