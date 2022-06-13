@@ -43,10 +43,8 @@ const LoginForm2 = (props: Props) => {
             </div>
           )}
           <div className="form-field">
-            <Field
+            <InputField
               name="email"
-              component={InputField}
-              field
               placeholder="Nhập email ..."
               id="email"
               label="email"

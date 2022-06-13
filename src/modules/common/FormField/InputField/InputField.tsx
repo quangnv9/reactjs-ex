@@ -20,7 +20,7 @@ const InputField = (props: Props) => {
       <label htmlFor={name} className="form-label">
         <FormattedMessage id={label} />
       </label>
-      <Input id={name} type="text" name={name} istouched={istouched} placeholder={placeholder} />
+      <Field id={name} type="text" name={name} istouched={istouched} placeholder={placeholder} />
       {errors && istouched && (
         <small className="text-danger">
           <FormattedMessage id={errors} />
