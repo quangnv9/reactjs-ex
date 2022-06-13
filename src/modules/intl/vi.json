@@ -9,6 +9,16 @@
   "minPasswordInvalid": "Mật khẩu tối thiểu 4 ký tự",
   "maxPasswordInvalid": "Mật khẩu tối đa 50 ký tự",
   "login": "Đăng nhập",
-  "name":"Họ tên",
+  "name":"Họ và tên",
+  "state":"Thành phố",
+  "stateRequire":"Vui lòng chọn thành phố",
+  "repeatPassword":"Xác nhận lại mật khẩu",
+  "repeatPasswordRequire":"Vui lòng xác nhận lại mật khẩu",
+  "repeatPasswordInvalid":"Xác nhận lại mật khẩu không đúng",
+  "nameRequire":"Vui lòng nhập họ và tên",
+  "gender":"Giới tính",
+  "genderRequire":"Vui lòng chọn giới tính",
+  "region":"Quốc gia",
+  "regionRequire":"Vui lòng chọn quốc gia",
   "register": "Đăng ký"
 }

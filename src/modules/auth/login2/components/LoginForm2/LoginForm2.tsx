@@ -1,4 +1,4 @@
-import { Form, Formik, FormikProps, useFormik } from 'formik';
+import { Field, Form, Formik, FormikProps, useFormik } from 'formik';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
@@ -29,7 +29,7 @@ const LoginForm2 = (props: Props) => {
 
   return (
     <Formik
-      initialValues={{ email: '', password: '', rememberMe: false }}
+      initialValues={{ email: '', password: '', city: '', rememberMe: false }}
       validationSchema={LoginValidation}
       onSubmit={(values, actions) => {
         onLogin(values);
@@ -43,16 +43,20 @@ const LoginForm2 = (props: Props) => {
             </div>
           )}
           <div className="form-field">
-            <InputField
+            <Field
+              name="email"
+              component={InputField}
+              field
+              placeholder="Nhập email ..."
               id="email"
               label="email"
-              name="email"
               istouched={touched.email}
               errors={errors.email}
             />
           </div>
           <div className="form-field">
             <PasswordField
+              placeholder="Nhập mật khẩu ..."
               id="password"
               label="password"
               name="password"

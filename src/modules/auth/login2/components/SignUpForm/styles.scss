@@ -1,0 +1,21 @@
+.signup-form {
+    max-width: 560px;
+    width: 100%;
+
+    & > .form-field {
+        margin-bottom: 6px;
+    }
+
+    & > .form-field.link {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & > button {
+        margin: 10px 0;
+        width: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}   

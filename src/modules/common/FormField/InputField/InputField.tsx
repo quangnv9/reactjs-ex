@@ -9,17 +9,18 @@ interface Props {
   name: string;
   label: string;
   errors: string | undefined;
+  placeholder: string;
   istouched: boolean | undefined;
 }
 
 const InputField = (props: Props) => {
-  const { id, label, errors, name, istouched } = props;
+  const { id, label, errors, name, istouched, placeholder } = props;
   return (
     <div className="form-group">
       <label htmlFor={name} className="form-label">
         <FormattedMessage id={label} />
       </label>
-      <Field id={name} type="text" name={name} istouched={istouched} />
+      <Input id={name} type="text" name={name} istouched={istouched} placeholder={placeholder} />
       {errors && istouched && (
         <small className="text-danger">
           <FormattedMessage id={errors} />
