@@ -5,22 +5,23 @@ import { Input } from 'reactstrap';
 import './styles.scss';
 
 interface Props {
-  id: string;
   name: string;
   label: string;
   errors: string | undefined;
   placeholder: string;
   istouched: boolean | undefined;
+  field: any;
 }
 
 const InputField = (props: Props) => {
-  const { id, label, errors, name, istouched, placeholder } = props;
+  const { label, errors, istouched, placeholder, field } = props;
+  const { name, value, onChange, onBlur } = field;
   return (
     <div className="form-group">
       <label htmlFor={name} className="form-label">
         <FormattedMessage id={label} />
       </label>
-      <Field id={name} type="text" name={name} istouched={istouched} placeholder={placeholder} />
+      <Input id={name} type="text" {...field} istouched={istouched} placeholder={placeholder} />
       {errors && istouched && (
         <small className="text-danger">
           <FormattedMessage id={errors} />

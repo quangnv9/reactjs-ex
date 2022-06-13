@@ -1,25 +1,26 @@
-import { Field } from 'formik';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Input } from 'reactstrap';
 import './styles.scss';
 
 interface Props {
-  id: string;
   label: string;
   name: string;
   placeholder: string;
   errors: string | undefined;
   istouched: boolean | undefined;
+  field: any;
 }
 
 const PasswordField = (props: Props) => {
-  const { id, label, errors, name, istouched, placeholder } = props;
+  const { label, errors, istouched, placeholder, field } = props;
+  const { name, value, onChange, onBlur } = field;
   return (
     <div className="form-group">
       <label htmlFor={name} className="form-label">
         <FormattedMessage id={label} />
       </label>
-      <Field id={id} type="password" name={name} istouched={istouched} placeholder={placeholder} />
+      <Input id={name} type="password" {...field} istouched={istouched} placeholder={placeholder} />
       {errors && istouched && (
         <small className="text-danger">
           <FormattedMessage id={errors} />

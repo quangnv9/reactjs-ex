@@ -1,18 +1,20 @@
 import { Field } from 'formik';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Input } from 'reactstrap';
 
 interface Props {
-  id: string;
   label: string;
   name: string;
+  field: any;
 }
 
 const CheckboxField = (props: Props) => {
-  const { id, label, name } = props;
+  const { label, field } = props;
+  const { name, value, onChange, onBlur } = field;
   return (
     <div className="checkbox-field">
-      <Field id={name} type="checkbox" name={name} />
+      <Input id={name} type="checkbox" name={name} />
       <label htmlFor={name}>
         <FormattedMessage id={label} />
       </label>

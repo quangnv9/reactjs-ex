@@ -4,6 +4,7 @@ import './styles.scss';
 import React from 'react';
 import { Field } from 'formik';
 import { ISignUpParams } from 'models/auth';
+import { Input } from 'reactstrap';
 
 interface Props {
   id: string;
@@ -14,10 +15,12 @@ interface Props {
   istouched: boolean | undefined;
   errors: string | undefined;
   onChange: any;
+  field: any;
 }
 
 const SelectField = (props: Props) => {
-  const { id, options, placeholder, label, name, istouched, errors } = props;
+  const { id, options, placeholder, label, istouched, errors, field } = props;
+  const { name, value, onChange, onBlur } = field;
 
   return (
     <div className="form-group">
@@ -25,7 +28,7 @@ const SelectField = (props: Props) => {
         <FormattedMessage id={label} />
       </label>
 
-      <Field as="select" id={id} name={name} placeholder={placeholder} options={options}>
+      <Input type="select" name={name} {...field} placeholder={placeholder} options={options}>
         <option value="" disabled selected>
           {placeholder}
         </option>
@@ -34,7 +37,7 @@ const SelectField = (props: Props) => {
             {option.name}
           </option>
         ))}
-      </Field>
+      </Input>
 
       {errors && istouched && (
         <small className="text-danger">

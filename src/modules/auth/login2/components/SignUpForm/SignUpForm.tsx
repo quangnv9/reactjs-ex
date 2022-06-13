@@ -1,4 +1,4 @@
-import { Form, Formik } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import { ILocationParams, ISignUpParams } from 'models/auth';
 import { FormattedMessage } from 'react-intl';
 import { Button } from 'reactstrap';
@@ -55,6 +55,7 @@ const SignUpForm = (props: Props) => {
       setProvince(json.data);
     }
   }, []);
+
   return (
     <Formik
       initialValues={{
@@ -71,7 +72,7 @@ const SignUpForm = (props: Props) => {
         onSignUp(values);
       }}
     >
-      {({ errors, touched, values, handleChange }) => {
+      {({ errors, touched, values }) => {
         useEffect(() => {
           getProvince(Number.parseInt(values.region));
         }, [values.region]);
@@ -83,79 +84,76 @@ const SignUpForm = (props: Props) => {
               </div>
             )}
             <div className="form-field">
-              <InputField
-                placeholder="Nhập email ..."
-                id="email"
-                label="email"
+              <Field
                 name="email"
+                component={InputField}
+                label="email"
+                placeholder="Nhập email ..."
                 istouched={touched.email}
                 errors={errors.email}
               />
             </div>
             <div className="form-field">
-              <PasswordField
-                placeholder="Nhập mật khẩu ..."
-                id="password"
-                label="password"
+              <Field
                 name="password"
+                component={PasswordField}
+                label="password"
+                placeholder="Nhập mật khẩu ..."
                 istouched={touched.password}
                 errors={errors.password}
               />
             </div>
             <div className="form-field">
-              <PasswordField
-                placeholder="Nhập lại mật khẩu ..."
-                id="repeatPassword"
-                label="repeatPassword"
+              <Field
                 name="repeatPassword"
+                component={PasswordField}
+                label="repeatPassword"
+                placeholder="Nhập lại mật khẩu ..."
                 istouched={touched.repeatPassword}
                 errors={errors.repeatPassword}
               />
             </div>
             <div className="form-field">
-              <InputField
-                placeholder="Nhập họ tên ..."
-                id="name"
-                label="name"
+              <Field
                 name="name"
+                component={InputField}
+                label="name"
+                placeholder="Nhập họ tên ..."
                 istouched={touched.name}
                 errors={errors.name}
               />
             </div>
             <div className="form-field">
-              <SelectField
-                id="gender"
-                label="gender"
+              <Field
                 name="gender"
+                component={SelectField}
+                label="gender"
                 placeholder="-- Chọn giới tính --"
                 options={GENDER_OPTIONS}
                 istouched={touched.gender}
                 errors={errors.gender}
-                onChange={handleChange}
               />
             </div>
             <div className="form-field">
-              <SelectField
-                id="region"
-                label="region"
+              <Field
                 name="region"
+                component={SelectField}
+                label="region"
                 placeholder="-- Chọn quốc gia --"
                 options={location}
                 istouched={touched.region}
                 errors={errors.region}
-                onChange={handleChange}
               />
             </div>
             <div className="form-field">
-              <SelectField
-                id="state"
-                label="state"
+              <Field
                 name="state"
+                component={SelectField}
+                label="state"
                 placeholder="-- Chọn thành phố --"
                 options={province}
                 istouched={touched.state}
                 errors={errors.state}
-                onChange={handleChange}
               />
             </div>
 

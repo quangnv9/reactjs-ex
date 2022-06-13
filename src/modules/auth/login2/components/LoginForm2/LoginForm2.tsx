@@ -2,7 +2,7 @@ import { Field, Form, Formik, FormikProps, useFormik } from 'formik';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { Button, Input } from 'reactstrap';
+import { Button } from 'reactstrap';
 import * as Yup from 'yup';
 import { ROUTES } from '../../../../../configs/routes';
 import { ILoginParams } from '../../../../../models/auth';
@@ -43,27 +43,27 @@ const LoginForm2 = (props: Props) => {
             </div>
           )}
           <div className="form-field">
-            <InputField
+            <Field
               name="email"
-              placeholder="Nhập email ..."
-              id="email"
+              component={InputField}
               label="email"
+              placeholder="Nhập email ..."
               istouched={touched.email}
               errors={errors.email}
             />
           </div>
           <div className="form-field">
-            <PasswordField
-              placeholder="Nhập mật khẩu ..."
-              id="password"
-              label="password"
+            <Field
               name="password"
+              component={PasswordField}
+              label="password"
+              placeholder="Nhập mật khẩu ..."
               istouched={touched.password}
               errors={errors.password}
             />
           </div>
           <div className="form-field link">
-            <CheckboxField id="checkbox" label="rememberMe" name="rememberMe" />
+            <Field name="rememberMe" component={CheckboxField} label="rememberMe" />
             <Link to={ROUTES.register} className="form-check-label">
               <FormattedMessage id="register" />
             </Link>
