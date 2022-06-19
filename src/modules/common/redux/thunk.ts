@@ -1,8 +1,8 @@
 import { Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-import { AppState } from '../../../redux/reducer';
-import { RESPONSE_STATUS_UNAUTHORIZED } from '../../../utils/httpResponseCode';
-import { ACCESS_TOKEN_KEY } from '../../../utils/constants';
+import { AppState } from 'redux/reducer';
+import { RESPONSE_STATUS_UNAUTHORIZED } from 'utils/httpResponseCode';
+import { ACCESS_TOKEN_KEY } from 'utils/constants';
 import Cookies from 'js-cookie';
 
 export function fetchThunk(
@@ -10,7 +10,7 @@ export function fetchThunk(
   method: 'get' | 'post' | 'delete' | 'put' = 'get',
   body?: object | FormData,
   auth = true,
-  contentType?: string,
+  contentType?: string
 ): ThunkAction<Promise<any>, AppState, null, Action<string>> {
   return async (dispatch, getState) => {
     const res = await fetch(url, {

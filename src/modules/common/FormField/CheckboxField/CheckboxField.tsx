@@ -14,7 +14,7 @@ const CheckboxField = (props: Props) => {
   const { name, value, onChange, onBlur } = field;
   return (
     <div className="checkbox-field">
-      <Input id={name} type="checkbox" name={name} />
+      <Input id={name} type="checkbox" {...field} name={name} />
       <label htmlFor={name}>
         <FormattedMessage id={label} />
       </label>

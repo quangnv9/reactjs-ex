@@ -20,5 +20,7 @@
   "genderRequire":"Vui lòng chọn giới tính",
   "region":"Quốc gia",
   "regionRequire":"Vui lòng chọn quốc gia",
-  "register": "Đăng ký"
+  "register": "Đăng ký",
+  "signUpOk":"Chúc mứng bạn đã đăng ký thành công",
+  "todo":"Todo"
 }

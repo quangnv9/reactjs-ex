@@ -16,6 +16,7 @@ interface Props {
 const InputField = (props: Props) => {
   const { label, errors, istouched, placeholder, field } = props;
   const { name, value, onChange, onBlur } = field;
+
   return (
     <div className="form-group">
       <label htmlFor={name} className="form-label">

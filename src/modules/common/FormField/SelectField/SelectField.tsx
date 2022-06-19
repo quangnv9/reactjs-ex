@@ -32,8 +32,8 @@ const SelectField = (props: Props) => {
         <option value="" disabled selected>
           {placeholder}
         </option>
-        {options.map((option) => (
-          <option key={option.id} value={option.id}>
+        {options.map((option, index) => (
+          <option key={index} value={option.id}>
             {option.name}
           </option>
         ))}

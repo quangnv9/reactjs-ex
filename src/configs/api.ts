@@ -14,7 +14,6 @@ function getBaseUrl(service: APIService) {
   } else if (service === APIService.public) {
     return `${APIHost}`;
   }
-
   return '';
 }
 
@@ -23,4 +22,5 @@ export const API_PATHS = {
   signUp: `${getBaseUrl(APIService.auth)}/register`,
   userProfile: `${getBaseUrl(APIService.public)}/user`,
   getLocation: `${getBaseUrl(APIService.public)}/location`,
+  getPhoto: `https://jsonplaceholder.typicode.com/photos?_start=1&_page=1`,
 };

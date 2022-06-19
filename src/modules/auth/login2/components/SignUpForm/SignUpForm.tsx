@@ -1,9 +1,9 @@
-import { Field, Form, Formik } from 'formik';
+import { FastField, Field, Form, Formik } from 'formik';
 import { ILocationParams, ISignUpParams } from 'models/auth';
 import { FormattedMessage } from 'react-intl';
 import { Button } from 'reactstrap';
 import React, { useCallback, useEffect, useState } from 'react';
-import { GENDER_OPTIONS, STATE_OPTIONS } from 'utils/constants';
+import { GENDER_OPTIONS } from 'utils/constants';
 import * as yup from 'yup';
 
 import InputField from 'modules/common/FormField/InputField/InputField';
@@ -84,7 +84,7 @@ const SignUpForm = (props: Props) => {
               </div>
             )}
             <div className="form-field">
-              <Field
+              <FastField
                 name="email"
                 component={InputField}
                 label="email"
@@ -94,7 +94,7 @@ const SignUpForm = (props: Props) => {
               />
             </div>
             <div className="form-field">
-              <Field
+              <FastField
                 name="password"
                 component={PasswordField}
                 label="password"
@@ -104,7 +104,7 @@ const SignUpForm = (props: Props) => {
               />
             </div>
             <div className="form-field">
-              <Field
+              <FastField
                 name="repeatPassword"
                 component={PasswordField}
                 label="repeatPassword"
@@ -114,7 +114,7 @@ const SignUpForm = (props: Props) => {
               />
             </div>
             <div className="form-field">
-              <Field
+              <FastField
                 name="name"
                 component={InputField}
                 label="name"

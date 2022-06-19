@@ -1,4 +1,4 @@
-import { Field, Form, Formik, FormikProps, useFormik } from 'formik';
+import { FastField, Form, Formik } from 'formik';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
@@ -29,9 +29,9 @@ const LoginForm2 = (props: Props) => {
 
   return (
     <Formik
-      initialValues={{ email: '', password: '', city: '', rememberMe: false }}
+      initialValues={{ email: '', password: '', rememberMe: false }}
       validationSchema={LoginValidation}
-      onSubmit={(values, actions) => {
+      onSubmit={(values) => {
         onLogin(values);
       }}
     >
@@ -43,7 +43,7 @@ const LoginForm2 = (props: Props) => {
             </div>
           )}
           <div className="form-field">
-            <Field
+            <FastField
               name="email"
               component={InputField}
               label="email"
@@ -53,7 +53,7 @@ const LoginForm2 = (props: Props) => {
             />
           </div>
           <div className="form-field">
-            <Field
+            <FastField
               name="password"
               component={PasswordField}
               label="password"
@@ -63,7 +63,7 @@ const LoginForm2 = (props: Props) => {
             />
           </div>
           <div className="form-field link">
-            <Field name="rememberMe" component={CheckboxField} label="rememberMe" />
+            <FastField name="rememberMe" component={CheckboxField} label="rememberMe" />
             <Link to={ROUTES.register} className="form-check-label">
               <FormattedMessage id="register" />
             </Link>

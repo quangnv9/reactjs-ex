@@ -16,6 +16,7 @@ import { fetchThunk } from '../../../../common/redux/thunk';
 import { setUserInfo } from '../../../redux/authReducer';
 import LoginForm2 from '../../components/LoginForm2/LoginForm2';
 import './styles.scss';
+import { IS_REMEMBER, IS_REMEMBER_FALSE, IS_REMEMBER_TRUE } from 'modules/intl/constants';
 
 const LoginPage2 = () => {
   const dispatch = useDispatch<ThunkDispatch<AppState, null, Action<string>>>();
@@ -28,7 +29,10 @@ const LoginPage2 = () => {
       setLoading(true);
 
       const json = await dispatch(
-        fetchThunk(API_PATHS.signIn, 'post', { email: values.email, password: values.password })
+        fetchThunk(API_PATHS.signIn, 'post', {
+          email: values.email,
+          password: values.password,
+        })
       );
 
       setLoading(false);
@@ -39,6 +43,7 @@ const LoginPage2 = () => {
           expires: values.rememberMe ? 7 : undefined,
         });
         dispatch(replace(ROUTES.home));
+
         return;
       }
 
