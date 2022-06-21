@@ -24,8 +24,6 @@ export default function photoReducer(
   },
   action: Action
 ) {
-  console.log('State: ', state);
-  console.log('Action: ', action);
   switch (action.type) {
     case getType(getPhotoList): {
       return {

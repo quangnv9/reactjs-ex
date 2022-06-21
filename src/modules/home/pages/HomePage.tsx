@@ -12,6 +12,9 @@ const HomePage = (props: Props) => {
       <Link to={ROUTES.photo}>
         <FormattedMessage id="photo" />
       </Link>
+      <Link to={ROUTES.table}>
+        <FormattedMessage id="table" />
+      </Link>
     </div>
   );
 };

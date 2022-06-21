@@ -12,11 +12,11 @@ import { AppState } from 'redux/reducer';
 import { getErrorMessageResponse } from 'utils';
 import { ACCESS_TOKEN_KEY } from 'utils/constants';
 import { RESPONSE_STATUS_SUCCESS } from 'utils/httpResponseCode';
-import { fetchThunk } from '../../../../common/redux/thunk';
-import { setUserInfo } from '../../../redux/authReducer';
-import LoginForm2 from '../../components/LoginForm2/LoginForm2';
 import './styles.scss';
 import { IS_REMEMBER, IS_REMEMBER_FALSE, IS_REMEMBER_TRUE } from 'modules/intl/constants';
+import { fetchThunk } from 'modules/common/redux/thunk';
+import { setUserInfo } from 'modules/auth/redux/authReducer';
+import LoginForm2 from 'modules/auth/components/login/LoginForm2/LoginForm2';
 
 const LoginPage2 = () => {
   const dispatch = useDispatch<ThunkDispatch<AppState, null, Action<string>>>();

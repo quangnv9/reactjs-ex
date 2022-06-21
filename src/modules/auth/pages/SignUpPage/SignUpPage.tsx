@@ -3,14 +3,14 @@ import { ROUTES } from 'configs/routes';
 import { replace } from 'connected-react-router';
 import logo from 'logo-420-x-108.png';
 import { ISignUpParams } from 'models/auth';
+import SignUpForm from 'modules/auth/components/register/SignUpForm/SignUpForm';
+import { fetchThunk } from 'modules/common/redux/thunk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Action } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from 'redux/reducer';
 import { RESPONSE_STATUS_SUCCESS } from 'utils/httpResponseCode';
-import { fetchThunk } from '../../../../common/redux/thunk';
-import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import './styles.scss';
 
 interface Props {}
